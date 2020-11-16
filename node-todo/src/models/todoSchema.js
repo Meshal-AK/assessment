@@ -29,7 +29,7 @@ const schemas = {
       .empty(""),
     priority: Joi.number().integer().min(1).max(5).empty(""),
     done: Joi.boolean().empty(""),
-    dateCreated: Joi.date().timestamp().forbidden().empty(""),
+    dateCreated: Joi.date().timestamp().forbidden().default(Date.now()),
     id: Joi.string().forbidden(),
     idParam: Joi.number().min(1),
   }),

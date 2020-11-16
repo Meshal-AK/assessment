@@ -6,7 +6,7 @@ const removeExpiredTodo = (todoJson) => {
   for (i = cleanJson.length - 1; i >= 0; i--) {
     // Adds 5 minutes in milliseconds and then compare with current time
     const after5Miutes = cleanJson[i].dateCreated + 300000;
-    if (Date.now() > after5Miutes) {
+    if (Date.now() > after5Miutes && cleanJson[i].done === true) {
       cleanJson.splice(i, 1);
       expiredTodoFound = true;
     }
